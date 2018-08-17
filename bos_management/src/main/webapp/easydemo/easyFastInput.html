@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<title>数据表格 datagrid</title>
+		<script type="text/javascript" src="../js/jquery-1.8.3.js"></script>
+		<script type="text/javascript" src="../js/easyui/jquery.easyui.min.js"></script>
+		<script type="text/javascript" src="../js/easyui/locale/easyui-lang-zh_CN.js"></script>
+		<link rel="stylesheet" href="../js/easyui/themes/default/easyui.css" />
+		<link rel="stylesheet" href="../js/easyui/themes/icon.css" />
+		<script type="text/javascript">
+				$(function(){
+					$("#grid").datagrid({
+						columns :[[
+							{
+								field:'id',
+								title:'编号',
+								width: 200,
+								editor:{
+									type:'validatebox',
+									options:{
+										required:true
+									}
+								}
+							},
+							{
+								field:'name',
+								title:'商品名称',
+								width:100,
+								editor:{
+									type:'validatebox',
+									options:{
+										required:true
+									}
+								}
+							},
+							{
+								field:'price',
+								title:'价格',
+								width:100,
+								editor:{
+									type:'text'
+								}
+							}
+						
+						]],
+							toolbar:[
+							{
+									
+									id:'add',
+									text:'添加',
+									iconCls:'icon-add',
+									handler:function(){
+										
+									}
+							},
+							{
+								id:'save',
+								text:'保存',
+								iconCls:'icon-save',
+								handler:function(){
+								}
+							},
+								{
+								id:'edit',
+								text:'编辑',
+								iconCls:'icon-edit',
+								handler:function(){
+									
+									
+									
+								}
+							}
+							
+							]
+					});
+					//设置全局变量,索引
+					var currentEditIndex;
+				})
+			
+		</script>
+	</head>
+	<body>
+		
+		<!--数据表格-->
+		<table id="grid"></table>
+	</body>
+</html>
